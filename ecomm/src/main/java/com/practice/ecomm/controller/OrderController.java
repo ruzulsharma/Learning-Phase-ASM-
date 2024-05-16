@@ -34,7 +34,7 @@ import java.util.List;
         }
 
         @PostMapping
-        public ResponseEntity<Object> createOrder(@Validated @RequestBody Order order)
+        public ResponseEntity<Object> createOrder(@Valid @RequestBody Order order)
         {
             // Validating the order using the ValidationMiddleware
             boolean isValidOrder = validationMiddleware.isValidOrder(order);

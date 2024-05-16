@@ -14,7 +14,7 @@ import java.util.List;
             private String orderId;
 
             private Date orderDate;
-            @NotBlank(message="Customer name is required")
+
             private String customerName;
             private String customerEmail;
             private String shippingAddress;
