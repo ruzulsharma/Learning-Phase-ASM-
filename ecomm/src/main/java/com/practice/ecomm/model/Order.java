@@ -1,16 +1,20 @@
 package com.practice.ecomm.model;
 
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+
 import java.util.Date;
 import java.util.List;
-import com.practice.ecomm.model.OrderStatus;
 
     @Document(collection = "orders")
     public class Order {
         @Id
             private String orderId;
+
             private Date orderDate;
+            @NotBlank(message="Customer name is required")
             private String customerName;
             private String customerEmail;
             private String shippingAddress;
@@ -25,7 +29,7 @@ import com.practice.ecomm.model.OrderStatus;
 
 
             public Order(String orderId, Date orderDate, String customerName, String customerEmail, String shippingAddress, List<String> orderItems, double totalAmount, OrderStatus status) {
-                this.orderId = orderId;
+                this.orderId= orderId;
                 this.orderDate = orderDate;
                 this.customerName = customerName;
                 this.customerEmail = customerEmail;
